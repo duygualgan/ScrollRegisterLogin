@@ -1,18 +1,28 @@
 package com.example.scrolllogin
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.scrolllogin.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityRegisterBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        //setContentView(R.layout.activity_register)
 
-        btn_go_register.setOnClickListener {
-           onBackPressed()
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        binding.btnGoLogin.setOnClickListener {
+            onBackPressed()
         }
+
+    /*btn_go_register.setOnClickListener {
+           onBackPressed()
+        }*/
     }
 
     override fun onBackPressed (){
